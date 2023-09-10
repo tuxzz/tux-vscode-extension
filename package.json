@@ -1,0 +1,62 @@
+{
+  "name": "tux-vscode-extension",
+  "displayName": "Tux's VSCode Extension",
+  "description": "Personal extension",
+  "version": "0.0.0",
+  "publisher": "tuxzz",
+  "engines": {
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "personal",
+    "tux",
+    "tuxzz",
+    "TukuZaZa"
+  ],
+  "icon": "assets/icon.png",
+  "bugs": {
+    "url": "https://github.com/tuxzz/tux-vscode-extension/issues"
+  },
+  "homepage": "https://github.com/tuxzz/tux-vscode-extension",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuxzz/tux-vscode-extension.git"
+  },
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "tux-vscode-extension.cpp-random-u32-literal",
+        "title": "Tux.Cpp: Random C++ U32 Literal",
+        "description": "Generate a string like 0x12345678u"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.82.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "chance": "^1.1.11"
+  }
+}
