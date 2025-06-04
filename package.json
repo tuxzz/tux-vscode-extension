@@ -2,10 +2,10 @@
   "name": "tux-vscode-extension",
   "displayName": "Tux's VSCode Extension",
   "description": "Personal extension",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "publisher": "tuxzz",
   "engines": {
-    "vscode": "^1.82.0"
+    "vscode": "^1.100.0"
   },
   "categories": [
     "Other"
@@ -45,18 +45,18 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
+    "@types/vscode": "^1.100.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
-    "@types/vscode": "^1.82.0",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
-    "@vscode/test-electron": "^2.3.4",
     "eslint": "^8.47.0",
     "glob": "^10.3.3",
     "mocha": "^10.2.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "@vscode/test-electron": "^2.3.4"
   },
   "dependencies": {
-    "chance": "^1.1.11"
+    "chance": "^1.1.13"
   }
 }

@@ -31,21 +31,22 @@ function randomCppU32Literal(): string{
 
 // This function takes a callback function for the text formatting 'formatCB'
 function processSelection(formatCB: ()=>string) {
-  let e = vscode.window.activeTextEditor;
-	if (e == null) {
-		console.log('No active editor');
+  const e = vscode.window.activeTextEditor;
+	if (!e) {
+		console.warn('No active editor');
 		return;
 	}
 
-  let d = e.document;
-  let sel = e.selections;
+  const d = e.document;
+  const sels = e.selections;
 
   e.edit(function (edit) {
     // iterate through the selections
-    for (var x = 0; x < sel.length; x++) {
-      let txt: string = d.getText(new vscode.Range(sel[x].start, sel[x].end));
+    for (let isel = 0; isel < sels.length; isel++) {
+      const sel = sels[isel];
+      let txt: string = d.getText(new vscode.Range(sel.start, sel.end));
       txt = formatCB();
-      edit.insert(sel[x].start, txt);
+      edit.replace(sel, txt);
     }
   });
 }
